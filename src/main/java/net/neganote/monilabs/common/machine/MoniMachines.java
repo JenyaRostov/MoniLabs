@@ -185,9 +185,7 @@ public class MoniMachines {
                     .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
                     .model(createWorkableTieredHullMachineModel(
                             MoniLabs.id("block/machines/parallel_hatch_mk" + (tier - 4)))
-                            .andThen((ctx, prov, model) -> {
-                                model.addReplaceableTextures("bottom", "top", "side");
-                            }))
+                            .andThen((ctx, prov, model) -> model.addReplaceableTextures("bottom", "top", "side")))
                     .tooltips(Component.translatable("gtceu.machine.parallel_hatch_mk" + tier + ".tooltip"),
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register(),
@@ -390,7 +388,8 @@ public class MoniMachines {
     public static MultiblockMachineDefinition BASIC_MICROVERSE_PROJECTOR = REGISTRATE
             .multiblock("basic_microverse_projector", (holder) -> new MicroverseProjectorMachine(holder, 1))
             .langValue("Basic Microverse Projector")
-            .rotationState(RotationState.NON_Y_AXIS)
+            .rotationState(RotationState.ALL)
+            .allowExtendedFacing(true)
             .recipeTypes(MoniRecipeTypes.MICROVERSE_RECIPES)
             .recipeModifiers(MoniRecipeModifiers.MICROVERSE_OC)
             .appearanceBlock(MoniBlocks.MICROVERSE_CASING)
@@ -425,7 +424,8 @@ public class MoniMachines {
     public static MultiblockMachineDefinition ADVANCED_MICROVERSE_PROJECTOR = REGISTRATE
             .multiblock("advanced_microverse_projector", (holder) -> new MicroverseProjectorMachine(holder, 2))
             .langValue("Advanced Microverse Projector")
-            .rotationState(RotationState.NON_Y_AXIS)
+            .rotationState(RotationState.ALL)
+            .allowExtendedFacing(true)
             .recipeTypes(MoniRecipeTypes.MICROVERSE_RECIPES)
             .recipeModifiers(MoniRecipeModifiers.MICROVERSE_OC)
             .appearanceBlock(MoniBlocks.MICROVERSE_CASING)
@@ -463,7 +463,8 @@ public class MoniMachines {
     public static MultiblockMachineDefinition ELITE_MICROVERSE_PROJECTOR = REGISTRATE
             .multiblock("elite_microverse_projector", (holder) -> new MicroverseProjectorMachine(holder, 3))
             .langValue("Elite Microverse Projector")
-            .rotationState(RotationState.NON_Y_AXIS)
+            .rotationState(RotationState.ALL)
+            .allowExtendedFacing(true)
             .recipeTypes(MoniRecipeTypes.MICROVERSE_RECIPES)
             .recipeModifiers(MoniRecipeModifiers.MICROVERSE_OC)
             .appearanceBlock(MoniBlocks.MICROVERSE_CASING)
@@ -514,7 +515,8 @@ public class MoniMachines {
     public static MultiblockMachineDefinition HYPERBOLIC_MICROVERSE_PROJECTOR = REGISTRATE
             .multiblock("hyperbolic_microverse_projector", (holder) -> new MicroverseProjectorMachine(holder, 4))
             .langValue("Hyperbolic Microverse Projector")
-            .rotationState(RotationState.NON_Y_AXIS)
+            .rotationState(RotationState.ALL)
+            .allowExtendedFacing(true)
             .recipeTypes(MoniRecipeTypes.MICROVERSE_RECIPES)
             .recipeModifiers(MoniRecipeModifiers.MICROVERSE_PARALLEL_HATCH, MoniRecipeModifiers.MICROVERSE_OC)
             .appearanceBlock(MoniBlocks.MICROVERSE_CASING)
